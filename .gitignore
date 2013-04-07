@@ -1,2 +1,4 @@
 application/cache/*
 application/logs/*
+
+nbproject/

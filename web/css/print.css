@@ -1,0 +1,91 @@
+/*
+	Calendar CSS - by Nathan Smith - www.sonspring.com
+*/
+
+/* =Basic HTML
+----------------------------------------------------------------------*/
+
+*
+{
+	background: #fff;
+	color: #000;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+}
+
+caption
+{
+	text-align: center;
+	text-transform: capitalize;
+	font: small-caps 20px Tahoma, sans-serif;
+}
+
+p
+{
+	margin: 0;
+}
+
+strong
+{
+	text-transform: uppercase;
+}
+
+table
+{
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+th,
+td
+{
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	font-family: Verdana, sans-serif;
+	padding: 0 2px;
+	vertical-align: top;
+	width: 100px;
+	height: inherit;
+}
+
+/* =Classes
+----------------------------------------------------------------------*/
+
+div.buttons
+{
+	display: none;
+}
+
+tr.day
+{
+	font-size: 9px;
+	height: 90px;
+}
+
+tr.number
+{
+	font-size: 10px;
+	height: 15px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+th
+{
+	font-size: 11px;
+	font-variant: small-caps;
+	font-weight: normal;
+	height: 15px;
+	text-transform: capitalize;
+	text-align: center;
+	vertical-align: middle;
+}
