@@ -6,6 +6,18 @@ It is a simple calendar web application based on Kohana PHP Framework, version 3
 installation
 ------------
 
+First, run the install shell script:
+
+    $ ./install.sh
+
+to fetch kohana 3.2 core from github (no need to hold it inside this repository).
+This script will load the dependency as a git submodule and will set an appropriate
+branch. Then run another script to set the permissions
+
+    $ ./permissions.sh
+
+of the `aplication/cache` and `application/logs` directories.
+
 The project was developed in `apache2` server with `mod_rewrite` installed.
 
 All SQL scripts reside in the `sql` directory:
