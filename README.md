@@ -1,7 +1,8 @@
 bearded-calendar
 =================
 
-It is a simple calendar web application based on Kohana PHP Framework, version 3.2 (development).
+It is a simple calendar web application based on Kohana PHP Framework,
+version 3.2 (development).
 
 installation
 ------------
@@ -10,9 +11,9 @@ First, run the install shell script:
 
     $ ./install.sh
 
-to fetch kohana 3.2 core from github (no need to hold it inside this repository).
-This script will load the dependency as a git submodule and will set an appropriate
-branch. Then run another script to set the permissions
+to fetch kohana 3.2 core and modules from github (no need to hold original sources
+inside this repository). This script will load the dependency as a git submodule
+and will set an appropriate branch. Then run another script to set the permissions:
 
     $ ./permissions.sh
 
@@ -35,6 +36,9 @@ the browser (request kohana app directly):
 
  * http://bearded-calendar/cdata/users - loads test users into the database
  * http://bearded-calendar/cdata/notes - loads test calendar notes
+
+Alternatively, there's a MySQL `fixtures.sql` script in the `sql` directory (it
+holds `users` records).
 
 login
 -----
