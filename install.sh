@@ -7,10 +7,10 @@ git submodule update
 cd modules/auth
 git checkout 3.2/develop
 
-cd ../modules/database
+cd ../database
 git checkout 3.2/develop
 
-cd ../modules/orm
+cd ../orm
 git checkout 3.2/develop
 
 cd ../../system
