@@ -4,3 +4,9 @@
 [submodule "modules/auth"]
 	path = modules/auth
 	url = https://github.com/kohana/auth.git
+[submodule "modules/orm"]
+	path = modules/orm
+	url = https://github.com/kohana/orm.git
+[submodule "modules/database"]
+	path = modules/database
+	url = https://github.com/kohana/database.git
