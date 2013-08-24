@@ -21,16 +21,16 @@ class Controller_Csvg extends Controller
     $manager_nameday = new manager_nameday();
     $manager_holiday = new manager_holiday($year);
     $manager_icon = new manager_icon($year, $month, $day);
-    
+
     $custom_date = mktime(0, 0, 0, $month, $day, $year);
     $day_of_year = date('z', $custom_date) + 1; // since counting from 0
     $day_name = $manager_label->getDay(date('N', $custom_date));
     $month_name = $manager_label->getMonth($month);
-    
+
     // special data
     $namedays = $manager_nameday->getNamedayByDate($month, $day);
     $holiday = $manager_holiday->getHolidayByDate($month, $day);
-    
+
     $data = array(
       'day' => $day,
       'month' => $month,
@@ -42,7 +42,7 @@ class Controller_Csvg extends Controller
     );
     if (!is_null($holiday)) $data['holiday'] = $holiday;
     $icon_data = $manager_icon->getIcons();
-        
+
     $this->response->body(View::factory('svg/page', array_merge($data, $icon_data)));
   }
 }

@@ -46,7 +46,7 @@ class manager_model
       ->and_where('note_date', 'between', $period)
       ->find_all();
   }
-  
+
   /**
    * Transforms Model_Note database query result into an array.
    *

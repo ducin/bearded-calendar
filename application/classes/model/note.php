@@ -1,22 +1,22 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
- 
+
 /**
  * Class representing Note model.
- * 
+ *
  * @see ORM
  */
 class Model_Note extends ORM
 {
-  protected $_belongs_to = array(
-    'owner' => array(
-      'model'       => 'user',
-      'foreign_key' => 'user_id',
-    ),
-  );
-  
+    protected $_belongs_to = array(
+        'owner' => array(
+            'model'       => 'user',
+            'foreign_key' => 'user_id',
+        ),
+    );
+
     /**
      * Defining rules for Note ORM model.
-     * 
+     *
      * @return Array
      */
     public function rules()
@@ -39,10 +39,10 @@ class Model_Note extends ORM
             ),
         );
     }
-    
+
     /**
      * Defining filters for Note ORM model.
-     * 
+     *
      * @return Array
      */
     public function filters()

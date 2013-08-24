@@ -1,22 +1,22 @@
 <?php
 
 /**
- * Calendar manager class. Provides basic functionalities to render calendar. 
+ * Calendar manager class. Provides basic functionalities to render calendar.
  */
 class manager_calendar
 {
   private $year, $month;
-  
+
   private $week_first, $week_last;
-  
+
   private $day_first, $day_last;
-  
+
   private $manager_holiday, $manager_nameday;
-  
+
   private $day_shift = 86400;
-  
+
   private $notes = null;
-  
+
   /**
    * Calendar manager cnstructor.
    *
@@ -27,17 +27,17 @@ class manager_calendar
   {
     $this->year = $year;
     $this->month = $month;
-    
+
     if ($this->month == 1)
       $this->week_first = 1;
     else
       $this->week_first = $this->getFirstWeekOfMonth();
-    
+
     if ($this->month == 12)
       $this->week_last = $this->getLastWeekOfYear();
     else
       $this->week_last = $this->getLastWeekOfMonth();
-    
+
     $this->day_first = $this->getDayFirst();
     $this->day_last = $this->getDayLast();
 
@@ -64,7 +64,7 @@ class manager_calendar
   {
     return date("W", strtotime('-1 second',strtotime('+1 month',strtotime($this->month.'/01/'.date('Y').' 00:00:00'))));
   }
-  
+
   /**
    * Returns last week of year.
    *
@@ -75,7 +75,7 @@ class manager_calendar
     $next_year = $this->year + 1;
     return date("W", strtotime("-1 week", strtotime("{$next_year}-01-01 00:00:00")));
   }
-  
+
   /**
    * Returns the calendar's first day date.
    *
@@ -109,7 +109,7 @@ class manager_calendar
   {
     return array($this->day_first, $this->day_last);
   }
-  
+
   /**
    * Includes notes which will be used while calendar data generating.
    *
@@ -144,7 +144,7 @@ class manager_calendar
     $day = date('d', $ts);
     $month = date('m', $ts);
     $year = date('Y', $ts);
-    
+
     $result = array(
       'year' => $year,
       'month' => (int) $month,
@@ -154,14 +154,14 @@ class manager_calendar
 
     // applying namedays
     $result['namedays'] = $this->manager_nameday->getNamedayByDate($month, $day);
-    
+
     // applying holidays
     if ($holiday = $this->manager_holiday->getHolidayByDate($month, $day))
       $result['holidays'] = $holiday;
-    
+
     if (isset($this->notes[date('Y-m-d', $ts)]))
       $result['notes'] = $this->notes[date('Y-m-d', $ts)];
-    
+
     return $result;
   }
 
@@ -182,7 +182,7 @@ class manager_calendar
     }
     return $day_tmp_array;
   }
-  
+
   /**
    * Generate calendar data array. Used in frontend to display calendar view
    * easily.
@@ -200,7 +200,7 @@ class manager_calendar
       $ts = $this->getFirstDayInWeekTimestamp($week_ind, $this->year);
       $result[$week_ind] = $this->generateWeekArray($ts);
     }
-    
+
     // for December (cross-week-year problem)
     if ($this->month == 12)
     {

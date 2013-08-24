@@ -6,9 +6,9 @@
 class manager_icon
 {
   private $year, $month, $day;
-  
+
   private $football_days;
-  
+
   /**
    * Icon manager class constructor.
    *
@@ -21,7 +21,7 @@ class manager_icon
     $this->year = $year;
     $this->month = $month;
     $this->day = $day;
-    
+
     $this->football_days = array(
       '2012-06-08',
       '2012-06-12',
@@ -63,7 +63,7 @@ class manager_icon
   {
     return ($this->getDate() == '2012-06-01');
   }
-  
+
   /**
    * Returns array of icons that should be displayed in the daily calendar mode.
    *

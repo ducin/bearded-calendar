@@ -388,7 +388,7 @@ class manager_nameday
   {
     return $this->namedays;
   }
-  
+
   /**
    * Returns the nameday for given month and day.
    *

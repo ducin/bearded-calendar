@@ -6,13 +6,13 @@
 class Controller_Ccalendar extends Controller
 {
   /**
-   * Executes set action. 
+   * Executes set action.
    */
   public function action_set()
   {
     $params = $this->request->param();
     $session = Session::instance();
-    
+
     if (isset($params['year']))
       $session->set('date_year', $params['year']);
     if (isset($params['month']))
@@ -20,7 +20,7 @@ class Controller_Ccalendar extends Controller
     if (isset($params['day']))
       $session->set('date_day', $params['day']);
     $session->set('mode', $params['mode']);
-    
+
     Request::current()->redirect('/');
   }
 
@@ -28,14 +28,14 @@ class Controller_Ccalendar extends Controller
    * Executes switch_mode action. Switches calendar mode between 'monthly' and
    * 'daily' view.
    */
-	public function action_switch_mode()
-	{
+  public function action_switch_mode()
+  {
     $session = Session::instance();
     $session->set('mode', ($session->get('mode') == 'daily' ? 'monthly' : 'daily'));
   }
 
   /**
-   * Executes prev_month action. 
+   * Executes prev_month action.
    */
   public function action_prev_month()
   {
@@ -56,7 +56,7 @@ class Controller_Ccalendar extends Controller
   }
 
   /**
-   * Executes next_month action. 
+   * Executes next_month action.
    */
   public function action_next_month()
   {

@@ -6,13 +6,13 @@
 class Controller_Cauth extends Controller
 {
   /**
-   * Executes login action. 
+   * Executes login action.
    */
   public function action_login()
   {
     $post = $this->request->post();
     $success = Auth::instance()->login($post['username'], $post['password']);
-    
+
     $session = Session::instance();
     if ($success)
     {
@@ -26,7 +26,7 @@ class Controller_Cauth extends Controller
   }
 
   /**
-   * Executes logout action. 
+   * Executes logout action.
    */
   public function action_logout()
   {

@@ -30,15 +30,15 @@ class Auth_Database extends Auth
 			$password = $this->hash($password);
 		}
 
-    $user = ORM::factory('user')
-      ->where('username', '=', $username)
-      ->and_where('password', '=', $password)
-      ->find();
+		$user = ORM::factory('user')
+			->where('username', '=', $username)
+			->and_where('password', '=', $password)
+			->find();
 
 		if ($user->loaded())
 		{
 			// Complete the login
-      $user->update_last_login();
+			$user->update_last_login();
 			return $this->complete_login($username);
 		}
 
@@ -55,9 +55,9 @@ class Auth_Database extends Auth
 	public function password($username)
 	{
 		return ORM::factory('user')
-      ->where('username', '=', $username)
-      ->find()
-      ->password;
+			->where('username', '=', $username)
+			->find()
+			->password;
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Auth_Database extends Auth
 		{
 			return FALSE;
 		}
-var_dump($password, $this->password($username));
+
 		return ($password === $this->password($username));
 	}
 }

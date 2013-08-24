@@ -8,8 +8,8 @@ class Controller_Chome extends Controller
   /**
    * Executes index action. 
    */
-	public function action_index()
-	{
+  public function action_index()
+  {
     $session = Session::instance();
 
     $view = View::factory('home', array(
@@ -17,5 +17,5 @@ class Controller_Chome extends Controller
     ));
 
     $this->response->body($view->render());
-	}
+  }
 }

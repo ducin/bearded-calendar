@@ -25,7 +25,7 @@ class Controller_Cmain extends Controller_Template
       $this->template->styles = array();
       $this->template->scripts = array();
     }
-    
+
     $session = Session::instance();
     $user = Auth::instance()->get_user();
     $title = 'Kohana Calendar';

@@ -2,21 +2,21 @@
 
 /**
  * Class representing User model.
- * 
+ *
  * @see ORM
  */
 class Model_User extends ORM
 {
-  protected $_has_many = array(
-    'notes' => array(
-      'model'       => 'note',
-      'foreign_key' => 'user_id',
-    ),
-  );
-  
+    protected $_has_many = array(
+        'notes' => array(
+            'model'       => 'note',
+            'foreign_key' => 'user_id',
+        ),
+    );
+
     /**
      * Defining rules for User ORM model.
-     * 
+     *
      * @return Array
      */
     public function rules()
@@ -101,7 +101,7 @@ class Model_User extends ORM
      * Hashes password using algorithm defined in auth module.
      *
      * @param type $password
-     * @return type 
+     * @return type
      */
     public function hash_password($password)
     {

@@ -33,14 +33,14 @@ class manager_holiday
   /**
    * Constructor. Generates array of holidays for a given year.
    *
-   * @param Integer $year 
+   * @param Integer $year
    */
   public function __construct($year)
   {
     $this->year = $year;
     $this->generateHolidayData();
   }
-  
+
   /**
    * Fills all predefined Polish holiday with moveable feast
    * (http://en.wikipedia.org/wiki/Moveable_feast).
@@ -49,16 +49,16 @@ class manager_holiday
   {
     $day_shift = 60*60*24;
     $easter_date = easter_date($this->year);
-    
+
     // Easter - first day (http://en.wikipedia.org/wiki/Easter)
     $this->holidays[date('m-d', $easter_date)] = 'pierwszy dzień Wielkiej Nocy';
-    
+
     // Easter - second day
     $this->holidays[date('m-d', $easter_date + $day_shift)] = 'drugi dzień Wielkiej Nocy';
-    
+
     // Pentecost (http://en.wikipedia.org/wiki/Pentecost)
     $this->holidays[date('m-d', $easter_date + 49 * $day_shift)] = 'Zesłanie Ducha Świętego';
-    
+
     // Corpus Christi (feast) (http://en.wikipedia.org/wiki/Corpus_Christi_(feast))
     $this->holidays[date('m-d', $easter_date + 60 * $day_shift)] = 'Boże Ciało';
   }
@@ -72,7 +72,7 @@ class manager_holiday
   {
     return $this->holidays;
   }
-  
+
   /**
    * Returns name of the holiday for given month and day (if exists).
    *

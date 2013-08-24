@@ -6,12 +6,12 @@
 class Controller_Cdaily extends Controller_Cmain
 {
   /**
-   * Executes index action. 
+   * Executes index action.
    */
   public function action_index()
   {
     $session = Session::instance();
-  
+
     $date = $session->get('date_year').'-'.$session->get('date_month').'-'.$session->get('date_day');
     $data = array(
       'date' => $date,
