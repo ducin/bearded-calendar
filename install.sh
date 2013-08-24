@@ -7,5 +7,5 @@ git submodule update
 cd modules/auth
 git checkout 3.2/develop
 
-cd system
+cd ../../system
 git checkout 3.2/develop
